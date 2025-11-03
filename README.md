@@ -8,7 +8,7 @@ go to Source Control --> Changes (accordion), all of the modifications that I pe
 on "+" to send the file to Stage (it creates a "screenshot" of the changes)
 
 before pushing the changes to the cloud (GitHub) you have to add a comment -->Commit ; after that
-press --> Push to finalize the publication.
+press --> Sync Changes to finalize the publication.
 
 
 ## CLI COMMANDS (Command Line)
