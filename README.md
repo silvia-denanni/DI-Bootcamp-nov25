@@ -1,4 +1,4 @@
-# DI_data_analysis_bootcamp2025
+# DI-Bootcamp
 
 working on the file in my pc
 git recognize the changes in my files (it does it automatically)
