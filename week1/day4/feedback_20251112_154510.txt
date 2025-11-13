@@ -1,0 +1,11 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day4/exerciseXP.py
+suggestions for improvement:
+- In exercise 3, the return could have been a print statment for a better code and shorter
+- Excercise 7, step 3: Avoid naming variables the same name as functions (temp = main_temp()), it can lead to confusion.
+- In exercise 6, the 'make_great' function only prints the modified list, it should actually modify the existing list
+Brief justification:
+- correctness: The code correctly implements all the exercises as described in the chapter content. Each function performs the expected task, and the outputs match the expected outputs. Exercise 1: Correctly defines and calls a function to print a message. Exercise 2: Correctly defines a function with a parameter and uses it to print a message. Exercise 3: Correctly defines a function with a default parameter value. Exercise 4: Correctly uses the random module and conditional statements. Exercise 5: Correctly defines a function with default values and keyword arguments. Exercise 6: Correctly iterates through a list. Exercise 7: follows steps one by one, but could be cleaner (see comments above).
+- readability: The code is generally well-formatted and easy to read. Variable names are descriptive. The comments at the beginning of each block are helpful to explain the purpose of each step. However, some functions have a return statement when a print statement would suffice, making them more complex than needed. Also in exercise 6, the 'make_great' function only prints the modified list, it should actually modify the existing list. But, overall is good.
+- performance: The code is efficient and performs the tasks without unnecessary overhead. Each function accomplishes its intended purpose directly. Some small adjustments can be made to return when print statment is requested, but overall good
+- security: The code does not involve any user input or external data sources, so security risks are minimal. There are no apparent vulnerabilities.
+
