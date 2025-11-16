@@ -1,0 +1,14 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day3/daylyChallenge3.py
+suggestions for improvement:
+- In Challenge 2, the `value.replace` in the dictionary cleaning loop should assign the result back to the `value` variable, or directly to the new dictionary's value, to actually clean the data.  Currently the program does not properly remove the $ and , from the values.
+- In Challenge 2, when cleaning the wallet and dictionary, it would be better to create a general function to avoid repetition.
+- For Challenge 2, in `items_purchase[item] = int(key)` it looks like key and value are swapped.
+- In Challenge 2, there is an issue where items are appended to the basket regardless of whether there is enough money to purchase them. This occurs because the wallet subtraction (`wallet -= price`) isn't done conditionally, leading to overspending and incorrect item selection.
+- Ensure that the dictionary cleaning process correctly iterates through the original dictionary (`dirty_items_purchase`) and creates a new cleaned dictionary. Currently, it appears to have a scope issue where `item` is referenced outside of its intended loop in the second example of challenge 2.
+- The prompt asks that you don't hard code it, implying that you are not suppose to insert the price of the item manually as done in the first version of Challenge 2. Instead the code should clean the data.
+Brief justification:
+- correctness: Challenge 1 is correct and outputs what is asked. Challenge 2's first program is correct but should not be used since the numbers are hard coded. The second program for challenge 2 has correctness issues, particularly in data cleaning and logic. It attempts to replace \$ and commas but does not properly assign those values back, and the item assignment uses the key instead of the cleaned value which results in incorrect prices.
+- readability: The code is generally readable, with clear variable names and comments explaining the logic. However, some sections could benefit from more concise code, such as combining the dictionary cleaning steps into a function and avoiding code duplication in the Challenge 2 examples. There are also some spacing inconsistencies.
+- performance: The code's performance is generally good, with efficient use of loops and conditional statements. However, creating a function for cleaning up currency values, could improve the overall efficiency. The logic for challenge 2, if improved, would be more efficient.
+- security: The code does not have any immediate security vulnerabilities. The use of `input()` could be a potential risk if not sanitized, but in this case, it is used to get a word from the user and the challenge does not use user input in a way that could cause harm.
+
