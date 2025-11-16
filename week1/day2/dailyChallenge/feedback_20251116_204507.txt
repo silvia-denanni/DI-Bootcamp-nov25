@@ -1,0 +1,10 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day2/dailyChallenge/challenge1.py
+suggestions for improvement:
+- The provided code does not implement the Farm class as specified in the instructions. It presents two unrelated programs: one generating multiples of a number and another removing consecutive duplicate letters from a string.
+- The code needs to implement the `Farm` class with the specified methods (`__init__`, `add_animal`, `get_info`, `get_animal_types`, `get_short_info`) to align with the problem description.
+Brief justification:
+- correctness: The code is completely unrelated to the chapter content. The chapter content asks for a `Farm` class implementation with specific methods, but the provided code implements two separate functionalities not mentioned in the chapter content. Therefore, the correctness is 0%.
+- readability: N/A
+- performance: N/A
+- security: N/A
+
