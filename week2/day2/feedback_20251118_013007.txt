@@ -1,0 +1,12 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week2/day2/daiyChallenge.py
+suggestions for improvement:
+- The `get_visible_items` method only returns the current index instead of the visible items, which is incorrect.
+- The `items = []` assignment within `__init__` should be `self.items = []`.
+- Navigation methods are missing.
+- Error handling for `go_to_page` is missing.
+Brief justification:
+- correctness: The code defines the `Pagination` class and its `__init__` method as described in steps 1 and 2. However, `get_visible_items` is not correctly implemented, returning only the index. Navigation methods are not implemented. Therefore, the correctness is low. The item list should be initiated with `self.items = []`.
+- readability: The code is reasonably well-structured and easy to follow, with comments indicating the steps being implemented, but it's incomplete. Variable names are clear.
+- performance: The `__init__` method calculates `total_pages`, which is good for performance.  There are no performance issues in the existing code.
+- security: There are no apparent security concerns in the provided code.
+
