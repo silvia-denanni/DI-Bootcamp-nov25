@@ -1,0 +1,12 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day3/exerciseXP.py
+suggestions for improvement:
+- In exercise 3: change 'clothes_type' key in the brand dictionary to 'type_of_clothes' key.
+- In exercise 4: In the third part, after sorting the `users` list alphabetically, you need to create a dictionary that maps the sorted characters to their indices, not just print the sorted keys. You can accomplish this by creating an empty dictionary and then iterating through the sorted list with `enumerate` to get both the index and the character, then assigning it to the new dictionary.
+- In exercise 4: In the third part, instead of creating a `index` list, use `range(len(users))`.
+- In exercise 4: In the third part, instead of using zip() and sorted(), create an empty dictionary and then add the sorted elements in the dictionary.
+Brief justification:
+- correctness: The code correctly addresses all the exercises, but there's a small error in the exercise 4, third part that sorts keys but not assigns index to values. The code uses dictionaries, loops, and conditionals as required by the Chapter Content/Questions. It correctly creates, accesses, modifies, and manipulates dictionaries based on the instructions provided in each exercise.
+- readability: The code is generally well-readable, with proper indentation and comments. However, the variable names in some places could be more descriptive to enhance readability.
+- performance: The code is reasonably performant for the given tasks. The operations performed on dictionaries and lists are efficient for the size of data involved.
+- security: There are no significant security concerns in this code. It doesn't involve any user input or external data that could lead to vulnerabilities.
+
