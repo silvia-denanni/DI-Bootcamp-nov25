@@ -1,0 +1,11 @@
+URL: URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week2/day2/exercisesXP.py
+suggestions for improvement:
+- In Exercise 1, the `walk()` method within the `Siamese` class is defined incorrectly. It should be a regular method and not define another nested `walk()` function.
+- In Exercise 1, `print(sara_pets.walk())` prints `None` because the `walk()` method in the `Pets` class doesn't explicitly return anything.
+- In Exercise 2, the `fight()` method in the `Dog` class does not return a value. It only prints a string. The problem states that the method should return a string indicating which dog won.
+- In Exercise 2, `dog3 = Dog("Haku", 7, 8,5)` causes an error because the Dog class only takes name, age, and weight.  Avoid hardcoding test inputs directly into the submission.
+- In Exercise 3, it is stated to import the Dog class from the previous file, however, a Dog class is imported and not properly implemented in the same file. 
+- In Exercise 3,  dog3 = PetDog() has an error, because the class must have the name, age, and weight arguments specified. 
+- Exercise 4: The code for Exercise 4 is missing, therefore it cannot be assessed for correctness.
+Correctness: 50%
+-----
