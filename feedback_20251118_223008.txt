@@ -1,0 +1,18 @@
+URL: URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week2/day3/exerciseXP.py
+suggestions for improvement:
+- In Exercise 1: In the `Currency` class, it would be beneficial to define `__rmul__` to handle cases where the integer is on the left side of the multiplication (e.g., `5 * c1`).
+- In Exercise 1: Consider adding `__sub__` and `__isub__` for subtraction operations.
+- In Exercise 3: You are overwriting the string module. Use a different variable name.
+- In Exercise 7: The add_users function is empty, you did not generate the user data.
+Correctness: 85%
+-----
+URL: URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week2/day3/exercise_one.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week2/day3/func.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----

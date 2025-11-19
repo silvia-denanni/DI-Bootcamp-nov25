@@ -1,0 +1,10 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day2/exerciseXP/exercisesXP.py
+suggestions for improvement:
+- In Exercise 4, the line `if current.is_integer():` does not work as intended. You should replace the is_integer() method usage, it is being called on the tuple `current` rather than its elements. Fix the logic for converting the float values to integers, it currently doesn't work correctly, also the `start` variable is a tuple when it should be a float.
+- In Exercise 7, the storage of user input in the list is flawed. `user_list = list(ask_fav_fruit)` creates a list of individual characters rather than words. To fix this split by space, using `ask_fav_fruit.split()`.
+Brief justification:
+- correctness: The code addresses the main points of each exercise, but there are some flaws with exercises 4 and 7. All other exercises are correct and implement the functionality as described.
+- readability: The code is mostly readable with good spacing and comments.
+- performance: The code's performance is generally good, with no major inefficiencies.
+- security: The code is reasonably secure for the given tasks, with some basic input validation.
+

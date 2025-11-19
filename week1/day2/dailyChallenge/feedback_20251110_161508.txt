@@ -1,0 +1,7 @@
+URL: https://github.com/silvia-denanni/DI-Bootcamp-nov25/blob/main/week1/day2/dailyChallenge/challenge1.py
+Brief justification:
+- correctness: The code directly addresses the problems described in the chapter content, implementing the functionality as specified for both Challenge 1 and Challenge 2. It accurately calculates multiples and removes consecutive duplicate letters, aligning perfectly with the instructions and examples provided.
+- readability: The code is well-structured and easy to understand, with clear variable names and comments explaining the purpose of each section.
+- performance: The code is efficient, using a list comprehension for Challenge 1 and a single loop for Challenge 2, resulting in optimal performance for the given tasks.
+- security: The code uses `int(input())` to ensure the inputs for Challenge #1 are integers, preventing potential errors. Challenge #2 does not pose any significant security concerns as it only involves string manipulation.
+
