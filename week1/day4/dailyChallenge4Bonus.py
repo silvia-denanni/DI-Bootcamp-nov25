@@ -75,7 +75,7 @@ pass
 
 def show_options():
 #     """Print the available actions."""
-    print("What would you like to do?\n 1. Show menu\n 2. Add item\n 3. Update price\n 4. Delete item\n 5. Search\n 6. Exit")
+    print("What  would you like to do?\n 1. Show menu\n 2. Add item\n 3. Update price\n 4. Delete item\n 5. Search\n 6. Exit")
 #show_options()
 pass
 

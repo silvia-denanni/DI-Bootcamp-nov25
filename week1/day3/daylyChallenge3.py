@@ -37,19 +37,19 @@ print(my_dictionary)
 # 5)If the basket is not empty, print the basket list in alphabetical order.
 
 #CLEAN DICTIONARY
-# items_purchase_dirty = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
-# items_purchase = {}
-# for item, price in items_purchase_dirty.items():
-#    new_price = price.replace("$", "").replace(",", "")
-#    items_purchase[item] = int(new_price)  
+items_purchase_dirty = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
+items_purchase = {}
+for item, price in items_purchase_dirty.items():     #we need both key and value because the basket will receive both key and  item
+   new_price = int(price.replace("$", "").replace(",", ""))
+   items_purchase[item] = (new_price)  
   
-# print(items_purchase)
+print(items_purchase)
 
-# #CLEAN VARIABLE
+#CLEAN VARIABLE
 
-# dirty_wallet = "$300"
-# wallet = int(dirty_wallet.replace("$","").replace(",",""))
-# print(wallet)                   
+dirty_wallet = "$300"
+wallet = int(dirty_wallet.replace("$",""))
+print(wallet)                   
 
 # Affordable Items Program NUMBER 1
 items_purchase = {'Water': 1, 'Bread': 3, 'TV': 1000, 'Fertilizer': 20}
@@ -61,6 +61,14 @@ for item, price in items_purchase.items():  #for loop with .items function to ac
    if price <= wallet_amount: #if the dictionary value is lower than the budget
       basket.append(item)  #append the item to the basket
       wallet_amount -= price  # here we subtract from the wallet the purchase
+
+#LESS ELEGANT BUT OK FOR LEVEL WAY
+if basket: 
+   print(sorted(basket))
+else:
+   print("nothing")
+
+#MORE ELEGANT WAY
 
 if not basket:     #if the basket is empty
    print("Nothing")

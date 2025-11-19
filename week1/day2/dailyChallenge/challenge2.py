@@ -6,7 +6,7 @@
 # 3. The list should stop when it reaches the length specified by the user.
 number = int(input("Enter an integer number: "))
 length = int(input("Enter the length of the multiples list: "))
-multiples = [number * i for i in range(1, length + 1)]
+multiples = [number * i for i in range(1, length + 1)] #LIST COMPREHENSION 
 print(f"The first {length} multiples of {number} are: {multiples}")
 
 #2

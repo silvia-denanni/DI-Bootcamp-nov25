@@ -5,4 +5,4 @@ password = input("What is your password? ")
 password_lenght = len(password)
 hidden_password = "*" * password_lenght
 #print("*" * 5)
-print(f"{username}, your password {password} is {len(password)} letters long.")
+print(f"{username}, your password {hidden_password} is {len(password)} letters long.")

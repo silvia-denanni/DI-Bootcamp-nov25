@@ -41,11 +41,11 @@ class Text:
             unique[word] = unique.get(word, 0) + 1
         return list(unique.keys())            #returns all distinct words, not those that appear only once
 
-# text_instance = Text.from_file(file_path)
-# print(text_instance.text)
-# print(text_instance.unique_words())
-# print(text_instance.most_common_word())  
-# print(text_instance.word_frequency("tonight"))
+text_instance = Text.from_file(file_path)
+print(text_instance.text)
+print(text_instance.unique_words())
+print(text_instance.most_common_word())  
+print(text_instance.word_frequency("tonight"))
 
 
 class TextModification(Text):

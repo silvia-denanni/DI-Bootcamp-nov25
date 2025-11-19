@@ -134,17 +134,32 @@ class Zoo():
         self.name = zoo_name
         self.animals = [] # empty list to keep track of animal
     
-    def add_animal(self, new_animal):
-        if new_animal not in self.animals:
-            self.animals.append(new_animal)
-    
+    # def add_animal(self, new_animal):
+    #     if new_animal not in self.animals:
+    #         self.animals.append(new_animal)
+    #     else:
+    #         print("This animal already is in the zoo.")
+
+    def add_animal (self, *new_animal):   #KWARGS ALWAYS CREATE A DICTIONARY
+        if new_animal:
+            for each_animal in self.animals:
+                if each_animal not in self.animals:
+                    self.animals.append(new_animal)
+                else:
+                    print("{each_animal} exist in the zoo")
+        print("," .join(self.animals))
+
+
     def get_animal(self):
-        for animal in self.animals: # goes through each animal in the zoo’s list one by one
-            print(animal)
+        if not self.animals:
+            print("There are no animals in the zoo")
+        else:
+            print("," .join(self.animals))              #REVIEW THE JOIN METHOD
 
     def sell_animal(self, animal_sold):
         if animal_sold in self.animals:
             self.animals.remove(animal_sold)
+            print(f"{animal_sold} was sold.")
 
     def sort_animals(self):
         sorted_animals = sorted(self.animals) #creates a new list of animals sorted in alphabetical order
@@ -164,19 +179,20 @@ class Zoo():
             print(f"{letter}:")
             for animal in groups[letter]: #to print each animal individually.
                 print(f"{animal}:")
+        return groups
 
 
 crazy_zoo = Zoo("Crazy Zoo")
-# print(crazy_zoo.name)
-crazy_zoo.add_animal("Giraffe")
-print(crazy_zoo.animals)
-crazy_zoo.add_animal("Gerbil")
-print(crazy_zoo.animals)
-crazy_zoo.add_animal("Porcupine")
-print(crazy_zoo.animals)
-crazy_zoo.add_animal("Baboon")
-print(crazy_zoo.animals)
-crazy_zoo.get_animal()
-crazy_zoo.sort_animals
-print(crazy_zoo.sort_animals())
-crazy_zoo.get_groups()
+# # print(crazy_zoo.name)
+# crazy_zoo.add_animal("Giraffe")
+# print(crazy_zoo.animals)
+# crazy_zoo.add_animal("Gerbil")
+# print(crazy_zoo.animals)
+# crazy_zoo.add_animal("Porcupine")
+# print(crazy_zoo.animals)
+# crazy_zoo.add_animal("Baboon")
+# print(crazy_zoo.animals)
+# crazy_zoo.get_animal()
+# crazy_zoo.sort_animals
+# print(crazy_zoo.sort_animals())
+crazy_zoo.add_animal("Monkey", "Meerkat", "Mermaid")

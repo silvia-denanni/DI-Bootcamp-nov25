@@ -1,0 +1,36 @@
+Most python programs come with a text file, usually a requirements.txt containing a list of every required module used in your python code and their version.
+It is good practice to generate and share a requirements.txt file when uploading your code to Github
+A requirements.txt file looks like this:
+
+appnope==0.1.0
+backcall==0.1.0
+beautifulsoup4==4.6.3
+bleach==2.1.4
+certifi==2018.8.24
+chardet==3.0.4
+Click==7.0
+cycler==0.10.0
+decorator==4.3.0
+defusedxml==0.5.0
+entrypoints==0.2.3
+Flask==1.0.2
+
+ou can install every required module from a requirements.txt file with the pip install -r (filename) argument within pip.
+
+pip install -r requirements.txt
+
+
+You can generate a requirements file for your python project with pipreqs, install it with:
+
+$ pip install pipreqs
+
+
+To generate a requirements file, just run this in your project folder:
+
+$ pipreqs .
+There is also an alternate way to do this using pip freeze inside your project folder:
+
+$ pip freeze > requirements.txt
+
+
+This command creates the requirements.txt in the same way pipreqs would write the file.
