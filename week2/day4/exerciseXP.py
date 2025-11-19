@@ -1,46 +1,46 @@
-# # Exercise 1: Random Sentence Generator
+# Exercise 1: Random Sentence Generator
 import os 
-# import random
+import random
 
-# dir_path = os.path.dirname(os.path.realpath(__file__))
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-# def get_words_from_file(file_path):
+def get_words_from_file(file_path):
 
-#     full_path = os.path.join(dir_path, file_path)   # Use os.path.join to build the full path correctly on any OS
-#     with open(full_path, "r") as file:
-#         content = file.read()        #new temp variable that holds the entire text as one big string
-#     words = content.split()          #new temp variable that splits the big string content into a list of words
-#     return words
-# #print(get_words_from_file(dir_path))       #it prints all of the word list      
+    full_path = os.path.join(dir_path, file_path)   # Use os.path.join to build the full path correctly on any OS
+    with open(full_path, "r") as file:
+        content = file.read()        #new temp variable that holds the entire text as one big string
+    words = content.split()          #new temp variable that splits the big string content into a list of words
+    return words
+#print(get_words_from_file(dir_path))       #it prints all of the word list      
 
-# def get_random_sentence(sentence_length, file_path):
-#     words = get_words_from_file(file_path)   # calls the first function 
-#     chosen_words = [random.choice(words) for _ in range(sentence_length)] #selects a random word from the list "sentence length" times, "_" is just a placeholder since we don’t need the loop variable
-#     sentence = " ".join(chosen_words).lower   #Create a sentence with the selected words in lowercase 
-#     return sentence
+def get_random_sentence(sentence_length, file_path):
+    words = get_words_from_file(file_path)   # calls the first function 
+    chosen_words = [random.choice(words) for _ in range(sentence_length)] #selects a random word from the list "sentence length" times, "_" is just a placeholder since we don’t need the loop variable
+    sentence = " ".join(chosen_words).lower   #Create a sentence with the selected words in lowercase 
+    return sentence
 
-# def main():
-#     print("This program will build a random sentence from words chosen from a list of equally random words.")
-#     sentence_input = (input("Please choose your sentence lenght: enter a number between 2 and 20: "))
+def main():
+    print("This program will build a random sentence from words chosen from a list of equally random words.")
+    sentence_input = (input("Please choose your sentence lenght: enter a number between 2 and 20: "))
   
-#     if not sentence_input.isdigit: 
-#         print("Invalid non integer input...reinitializing")
-#         return
+    if not sentence_input.isdigit: 
+        print("Invalid non integer input...reinitializing")
+        return
     
-#     sentence_length = int(sentence_input)
+    sentence_length = int(sentence_input)
     
-#     if sentence_length < 2 or sentence_length > 20:
-#         print("Invalid input: number not in range 2 to 20. Exiting.")
-#         return
+    if sentence_length < 2 or sentence_length > 20:
+        print("Invalid input: number not in range 2 to 20. Exiting.")
+        return
     
-#     print("Input accepted!")
-#     random_sentence = get_random_sentence(sentence_length,"wordList.txt")
+    print("Input accepted!")
+    random_sentence = get_random_sentence(sentence_length,"wordList.txt")
 
-#     print("Generated sentence: ")
-#     print(random_sentence())
+    print("Generated sentence: ")
+    print(random_sentence())
     
-# if __name__ == "__main__":
-#     main()                         #guard to allow importing without running main()
+if __name__ == "__main__":
+    main()                         #guard to allow importing without running main()
 
 
 #Exercise 2: Working with JSON
