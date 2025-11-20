@@ -1,8 +1,8 @@
 import math
 
-# Create a Pagination class that simulates a basic pagination system.
+# Create a Pagination class that simulates a basic pagination system
 
-# Step 1: Create the Pagination Class to represent paginated content.
+# Step 1: Create the Pagination Class to represent paginated content
 # Step 2: Implement the __init__ Method
 # Step 3: Implement the get_visible_items() Method
 
