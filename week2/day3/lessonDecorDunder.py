@@ -34,6 +34,11 @@ class Person:
         birth_date = f'1-1-{birth_year}'
         return cls(name,surname,birth_date)            # cls = Person class
     
+    @property
+    def age(self)
+        today = datetime.datetime.today
+        age = today. year - self.parse_birth_date
+
     @property 
     def full_name(self):
         self.full_name = f"{self.name},{self.surname}"  #TypeError: Person.full_name() takes 1 positional argument but 2 were given
@@ -42,7 +47,12 @@ class Person:
     def full_name(self):
         pass
         #self.full_name = f"{self.name},{self.surname}"   
+    def presentatin(self):
+        pass
 
+    def parse_birth_date(self):
+        return datetime.strptime(self.birth_date, "%d-%M-&y")
+        
 person1 = Person("JON","SNOWà","05-12-1980")
 person2 = Person("Arya","Stark","03-07-2000")
 

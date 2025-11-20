@@ -1,0 +1,107 @@
+#CLASS METHODS:
+#they modify a SELF function by replacing self (INSTANCE, OBJECT) with cls (CLASS of the instance)
+
+class Employee:
+
+    num_of_emps = 0         #---> CLASS ATTRIBUTE (not based on instance, VALID FOR ALL)
+    raise_amount = 1.04        #---> CLASS ATTRIBUTE (not based on instance, VALID FOR ALL)
+
+    def __init__(self, name, surname, pay):
+        self.name = name
+        self.surname = surname
+        self.email = name + '.' + surname + '@email.com'    #it does NOT NEED an AD HOC ATTRIBUTE
+        self.pay = pay
+
+        Employee.num_of_emps += 1      # NOT INSTANCE related, but CLASS  
+
+    def fullname(self):
+        return '{} {}'.format(self.name, self.surname)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+    @classmethod                       #MODIFIES A METHOD, with CLASS (cls) taking the wheel instead of SELF
+    def set_raise_amount(cls, amount):
+        cls.raise_amount = amount       #CLASS instead of SELF
+
+employee1 = Employee("Elliot", "Reed", 10000)
+employee2 = Employee("John", "Dorian", 12000)
+
+# print(Employee.fullname(employee1)) >>> Elliott Reed
+# print(Employee.num_of_emps)  #>>> 2
+'''print(Employee.raise_amount)   #>>>1.04     -----> we are getting it from the class attribute at the top'''
+'''print(employee1.raise_amount)  #>>>1.04     -----> we are getting it from the class attribute at the top'''
+'''print(employee2.raise_amount)  #>>>1.04     -----> we are getting it from the class attribute at the top'''
+
+# TO ACTUALLY APPLY THE CLASS METHOD, WE NEED TO CALL IT, AND THEN PRINT IT!
+
+class Employee:
+
+    num_of_emps = 0         #---> CLASS ATTRIBUTE (not based on instance, VALID FOR ALL)
+    raise_amount = 1.04        #---> CLASS ATTRIBUTE (not based on instance, VALID FOR ALL)
+
+    def __init__(self, name, surname, pay):
+        self.name = name
+        self.surname = surname
+        self.email = name + '.' + surname + '@email.com'    #it does NOT NEED an AD HOC ATTRIBUTE
+        self.pay = pay
+
+        Employee.num_of_emps += 1      # IT IS NOT INTANCE RELATED, BUT RATHER CLASS  
+
+    def fullname(self):
+        return '{} {}'.format(self.name, self.surname)
+
+    def apply_raise(self):
+        self.pay = int(self.pay * self.raise_amount)
+
+    @classmethod                       
+    def set_raise_amount(cls, amount):   #CLASS instead of SELF
+        cls.raise_amount = amount       
+                                            #LINE BELOW we ACTUALLY CALL the class method!
+    Employee.set_raise_amount(1.05)        # ==    '''Employee.raise_amount = 1.05'''
+    
+    @classmethod                       #ALTERNATIVE CONSTRUCTOR: this one allows to transform a string into a  
+                                        #NEW employee           
+    def from_string(cls, employee_string):
+        name, surname, pay = employee_string.split("-")   #it separates the string at - charachter
+        return cls(name, surname, pay)               #it gives us back the NEW employee OBJECT
+
+    @staticmethod
+    def is_work_day(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
+
+employee1 = Employee("Elliot", "Reed", 16000)
+employee2 = Employee("John", "Dorian", 18000)
+
+employee_string1 = "Percivald-Cox-100000"
+employee_string2 = "Carla-Espinosa-18000"
+
+new_employee1 = Employee.from_string(employee_string1)   #CALLING THE METHOD/ALTERNATIVE CONSTRUCTOR
+
+print(new_employee1.name)      #Percivald
+print(new_employee1.surname)   #Cox
+print(new_employee1.pay)       #100000
+
+
+
+#STATIC METHODS have:
+# 0 connection to CLASSIC (self) METHODS
+# SOME CONNECTION to the CLASS (@classmethod), but not EXPLICIT
+#  --------------> you can PASS ANY ARGUMENT YOU WANT
+
+import datetime
+my_date = datetime.datetime(2025,7,10)
+print(Employee.is_work_day(my_date))  #True
+
+
+
+
+#DECORATORS ARE FUNCTIONS BUT CAN BE ACCESSED AS ATTRIBUTES
+# @property DECORATOR: allows us to define 3 different methods (getter, setter, and deleter) for a single attribute name
+
+
+
+

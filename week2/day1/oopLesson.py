@@ -72,8 +72,12 @@ class Person():
   def show_details(self):
     print(f"Hello my name is {self.name} and I am {self.age} years old")
 
-first_person = Person("John", 36)
-first_person.show_details()    #>>> Hello my name is John and I am 36 years old
+first_person = Person("John", 36)          '
+
+Person.show_details(first_person)          '''this is the same as below'''
+first_person.show_details()                '''this is the same as the above'''
+
+                               #>>> Hello my name is John and I am 36 years old
 
 #2)
  

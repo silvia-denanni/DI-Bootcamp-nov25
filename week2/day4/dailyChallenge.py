@@ -56,6 +56,6 @@ class TextModification(Text):
         punctuation_characters = string.punctuation
         self.text = re.sub(r'[{}]'.format(re.escape(punctuation_characters)), '', self.text)
         return self.text
-    remove_punctuation()
+    
     
 
