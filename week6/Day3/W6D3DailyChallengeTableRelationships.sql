@@ -6,11 +6,21 @@
 ----------->The Customer profile table should have the columns : id, isLoggedIn DEFAULT false(Boolean)
 ----------->customer_id (a reference to the Customer table)
 
+
+----------- Drop tables if they exist to allow rerunning the script without errors
+-- DROP TABLE IF EXISTS customer_profile;
+-- DROP TABLE IF EXISTS customer;
+
+
+----------- Create Customer table
+
 -- CREATE TABLE customer(
 -- 	cust_id SERIAL PRIMARY KEY,
 -- 	first_name VARCHAR(50) NOT NULL,
 -- 	last_name VARCHAR(100) NOT NULL
 -- );
+
+----------- Create Customer Profile table with one-to-one relationship to Customer
 
 -- CREATE TABLE customer_profile (
 -- 	cust_id INTEGER PRIMARY KEY,
@@ -45,15 +55,21 @@
 -- All the customers first_name and isLoggedIn columns - even those who don’t have a profile.
 -- The number of customers that are not LoggedIn
 
+------------ Query 1: Get first names of customers who are logged in
+
 -- SELECT c.first_name
 -- FROM customer AS c
 -- INNER JOIN customer_profile AS cp ON c.cust_id = cp.cust_id  ---------> get customers with profiles where isLoggedIn is true          
 -- WHERE cp.isLoggedIn = TRUE;
 
+
+------------ Query 2: Get all customers with their login status, including those without profiles
+
 -- SELECT c.first_name, cp.isLoggedIn
 -- FROM customer AS c
 -- LEFT JOIN customer_profile AS cp ON c.cust_id = cp.cust_id --------->from 'customer' to 'customer_profile' including all customers
 
+----------- Query 3: Count customers who are not logged in or have no profile
 -- SELECT COUNT(*) AS not_logged_in_count
 -- FROM customer AS c
 -- LEFT JOIN customer_profile AS cp ON c.cust_id = cp.cust_id
@@ -69,6 +85,10 @@
 -------(Find an SQL method), FILL IT AS TOLD
 ----------->Create a table named Library, with the columns AS TOLD
 
+-------------Drop tables if they exist to allow rerunning the script without errors
+-- DROP TABLE IF EXISTS library;
+-- DROP TABLE IF EXISTS student;
+-- DROP TABLE IF EXISTS book;
 
 -- CREATE TABLE book(
 -- 	book_id SERIAL PRIMARY KEY,
@@ -85,7 +105,7 @@
 -- CREATE TABLE student(
 -- 	student_id SERIAL PRIMARY KEY,
 --  stud_name VARCHAR(50) NOT NULL UNIQUE,
--- 	stud_age SMALLINT NOT NULL DEFAULT 15
+-- 	stud_age SMALLINT NOT NULL CONSTRAINT age_check CHECK (stud_age <= 15)   --stronger than 'stud_age SMALLINT NOT NULL DEFAULT 15'
 -- );
 
 -- INSERT INTO student(stud_name, stud_age)
@@ -148,4 +168,5 @@ WHERE b.title = 'Alice In Wonderland'
 
 -- Because the foreign key constraint on student_fk_name in the library table uses ON DELETE CASCADE,
 -- when you delete a student from the student table, all rows in the library table that reference
+
 -- that student will be automatically deleted.
