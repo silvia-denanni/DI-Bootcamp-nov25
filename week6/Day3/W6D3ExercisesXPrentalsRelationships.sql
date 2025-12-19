@@ -51,20 +51,31 @@
 --   FOREIGN KEY (language_fk_id) REFERENCES language(language_id)
 -- );
 
+-------------Drop the existing foreign key constraint 
+-- ALTER TABLE customer_review
+-- DROP CONSTRAINT customer_review_new_films_fk_id_fkey;
+
+-------------Add the foreign key constraint with ON DELETE CASCADE
+-- ALTER TABLE customer_review
+-- ADD CONSTRAINT customer_review_new_films_fk_id_fkey
+-- FOREIGN KEY (new_films_fk_id) REFERENCES new_films(film_id) ON DELETE CASCADE;
+
 -- INSERT INTO customer_review (new_films_fk_id, language_fk_id, rev_title, review_text, score) VALUES
 -- (
 --   (SELECT film_id FROM new_films WHERE film_name = 'Donnie Darko'),
 --   (SELECT language_id FROM language WHERE name = 'English'),
 --   'Mind blowing story',
 --   'Many say that Donnie Darko is one of the best films of all time ... and I tend to believe that, he manages to create suspense, tension, well written and well crafted. I couldn''t help but notice how good acting is, Jake Gyllenhaal, Drew Barrymore, Maggie Gyllenhaal, Seth Rogen, Patrick Swayze, and many others do an exceptional job. The soundtrack is so euphoric, the movie is unique, delves into odd things about timetravel, but manages to keep you interested. Over-all a superb movie',
---    10
+--    10,
+--    current_date
 --   ),
 -- (
 --   (SELECT film_id FROM new_films WHERE film_name = 'Battle Royale'),
 --   (SELECT language_id FROM language WHERE name = 'Japanese'),
 --   'An aesthetically gorgeous brutal survival movie.',
 --   'A tantalizing aesthetic runs through the film defying categorization. At first the theme is the suspension of all morality, first on the part of a demented governmental scheme followed by the replication of this nihilism among the captive students. Then as alliances forge and melt into oblivion a hopeful air in the film arises. Inter titles are used to comic excess, something that Quentin Tarantino seems to have a fascination with in films like "Django Unchained" as if we needed them emotionally to pause and digest the turmoil.',
---   10
+--   10,
+--   current_date
 --   );
 
 
@@ -72,6 +83,8 @@
 --DELETE FROM new_films WHERE film_name = 'Donnie Darko'
 
 -------------> This happens: ERROR Detail: Key (film_id)=(1) is still referenced from table "customer_review".
+
+
 
 
 ----------------> Exercise 2 DVD Rental
@@ -90,7 +103,7 @@
 ------------------Is this an easy step, or does it need extra checking?
 ------------------It works, I get: DROP TABLE Query returned successfully in 693 msec.
 
---DROP TABLE customer_review;
+--DROP TABLE IF EXISTS customer_review;
 
 
 ----------------->Find out how many rentals are still outstanding 
